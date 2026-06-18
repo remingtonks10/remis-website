@@ -3,13 +3,12 @@ export default function Home() {
     <div className="min-h-screen text-[var(--ink)]">
       <main className="page-flow mx-auto w-full max-w-[90rem] px-5 md:px-10">
         {/* Header and Hero with Top Background */}
-        <section className="relative overflow-hidden -mx-5 md:-mx-10 px-5 md:px-10 rounded-b-2xl">
+        <section className="relative overflow-hidden -mx-5 md:-mx-10 px-5 md:px-10 rounded-b-2xl bg-[var(--ink)]">
           <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/hero-cows.png')" }}
+            className="absolute inset-0 bg-cover bg-top"
+            style={{ backgroundImage: "url('/truck moving range coops turkeys.jpg')", animation: "blur-in 1s ease-out 1.5s forwards" }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
 
           <div className="relative z-10">
             {/* Header with Navigation */}

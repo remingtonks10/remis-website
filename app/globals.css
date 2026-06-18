@@ -124,6 +124,16 @@ body {
   }
 }
 
+@keyframes blur-in {
+  from {
+    filter: blur(0px);
+  }
+
+  to {
+    filter: blur(8px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fade-in,
   .fade-in-delayed,
