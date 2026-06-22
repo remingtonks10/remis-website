@@ -1,166 +1,98 @@
+import Link from "next/link";
+import { Section } from "@/app/components/Section";
+import { SiteFooter } from "@/app/components/SiteFooter";
+import { SiteHeader } from "@/app/components/SiteHeader";
+import { CONTACT_EMAIL, ORDER_PATH } from "@/app/lib/site";
+
 export default function About() {
   return (
     <div className="min-h-screen text-[var(--ink)]">
-      <main className="page-flow mx-auto w-full max-w-[90rem] px-5 md:px-10">
-        {/* Header */}
-        <header className="py-6 md:py-8">
-          <div className="flex items-center justify-between">
-            <a href="/" aria-label="Kesten Feed Co home" className="inline-flex items-center">
-              <img src="/main-logo.png" alt="Kesten Feed Co" className="h-12 md:h-14 w-auto" />
-            </a>
-            <nav className="flex gap-6 md:gap-8">
-              <a href="/" className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--bronze)] transition-colors">Home</a>
-              <a href="/products" className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--bronze)] transition-colors">Products</a>
-              <a href="/order-feed" className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--bronze)] transition-colors">Order</a>
-              <a href="/about" className="text-sm font-semibold text-[var(--bronze)] border-b-2 border-[var(--bronze)]">About</a>
-              <a href="/contact" className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--bronze)] transition-colors">Contact</a>
-            </nav>
-          </div>
-        </header>
+      <main className="mx-auto w-full max-w-[90rem] px-5 md:px-10">
+        <SiteHeader active="about" />
 
-        {/* Page Intro */}
-        <section className="relative overflow-hidden -mx-5 md:-mx-10 px-5 md:px-10 py-12 md:py-16 rounded-2xl">
+        <section className="relative -mx-5 overflow-hidden px-5 py-16 md:-mx-10 md:px-10 md:py-24">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/about-ducks.png')" }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
-
-          <div className="relative z-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">About Kesten Feed Co</h1>
-            <p className="text-lg text-white/90 max-w-2xl">
-              We exist to make it easier for small farms and homesteaders to get dependable feed without the usual frustration.
+          <div className="absolute inset-0 bg-[rgba(15,72,120,0.66)]" aria-hidden="true" />
+          <div className="relative z-10 max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[var(--bronze)]">
+              Built on community. Backed by experience.
             </p>
+            <h1 className="mt-4 text-4xl font-bold leading-tight text-white md:text-6xl">
+              Our Story
+            </h1>
           </div>
         </section>
 
-        {/* Why We Started */}
-        <section className="py-12 md:py-16 border-b border-[var(--ink-soft)]">
-          <h2 className="text-3xl font-bold mb-6 text-[var(--ink)]">Why Kesten Feed Co Exists</h2>
-          <div className="space-y-6 text-[var(--ink-muted)] leading-relaxed">
-            <p>
-              Remi started Kesten Feed Co because he saw a real problem: small farm owners and homesteaders in Missouri were getting squeezed. They'd pay too much at big retailers, drive too far to get quality feed, or end up with animals that didn't thrive on the limited options available locally.
-            </p>
-            <p>
-              The feed business is typically built around big operations with big orders. But there's a whole community of small farms—backyard poultry keepers, hobby ranchers, small dairy operations—who just need quality feed at a fair price delivered without hassle. That's where we fit.
-            </p>
-            <p>
-              Kesten Feed Co is built on a simple idea: small farms deserve straightforward, honest service from someone who understands what they actually need.
-            </p>
-          </div>
-        </section>
+        <Section>
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_0.28fr] lg:items-start">
+            <article className="story-copy">
+              <p>Kesten Feed Co. began with a simple problem.</p>
+              <p>
+                In 2017, our family was building David&apos;s Pasture and searching for a reliable,
+                affordable source of high-quality non-GMO feed. Like many other small farms in
+                west-central Missouri, we quickly discovered that finding dependable feed, and
+                dependable suppliers, wasn&apos;t always easy.
+              </p>
+              <p>Then we found NEMO Feeds.</p>
+              <p>
+                The quality, consistency, and nutritional expertise we had been looking for were
+                finally within reach. Before long, friends and neighbors began asking where they
+                could get the same feed, and what started as helping a few local farms quickly
+                grew into serving a community of homesteaders and livestock producers across
+                west-central Missouri.
+              </p>
+              <p>
+                In 2025, my wife Kaitlyn and I founded Kesten Feed Co. to carry that mission
+                forward.
+              </p>
+              <p>
+                Today, we&apos;re proud to connect local families with quality feed, honest guidance,
+                and dependable service: continuing to invest in the community of small farms and
+                homesteaders that has supported us from the beginning.
+              </p>
+              <p>
+                Because taking care of your animals is hard enough: getting quality feed
+                shouldn&apos;t be.
+              </p>
+            </article>
 
-        {/* Our Approach */}
-        <section className="py-12 md:py-16">
-          <h2 className="text-3xl font-bold mb-8 text-[var(--ink)]">Our Approach</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-[var(--bronze)]">Quality First</h3>
-              <p className="text-[var(--ink-muted)] leading-relaxed">
-                Non-GMO ingredients, carefully mixed, formulated for the animals you're raising. We don't cut corners on what goes into our feeds because we know your animals deserve better.
+            <aside className="callout-panel">
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-[var(--bronze)]">
+                What Matters Here
               </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-[var(--bronze)]">Local & Transparent</h3>
-              <p className="text-[var(--ink-muted)] leading-relaxed">
-                We're based in Marshall, Missouri. You know who you're buying from. No corporate layers between you and the person making your feed.
+              <p className="mt-4 text-2xl font-bold leading-snug text-[var(--ink)]">
+                We&apos;re not trying to become the biggest feed company in Missouri. We&apos;re trying to
+                become the most trusted.
               </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-[var(--bronze)]">Practical Service</h3>
-              <p className="text-[var(--ink-muted)] leading-relaxed">
-                Whether you need eight bags picked up or eight tons delivered, we work with your schedule and your operation's size. No pressure to buy more than you need.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-[var(--bronze)]">Real Relationships</h3>
-              <p className="text-[var(--ink-muted)] leading-relaxed">
-                We're not a call center. Remi takes orders, answers questions, and builds relationships with customers because we care about your farm's success.
-              </p>
-            </div>
+            </aside>
           </div>
-        </section>
+        </Section>
 
-        {/* Sourcing & Values */}
-        <section className="py-12 md:py-16 bg-[var(--primary)] -mx-5 md:-mx-10 px-5 md:px-10 rounded text-white">
-          <h2 className="text-3xl font-bold mb-8">What We Stand For</h2>
-          <div className="space-y-6">
+        <Section className="-mx-5 bg-white/55 px-5 md:-mx-10 md:px-10">
+          <div className="grid gap-8 md:grid-cols-[minmax(0,0.75fr)_minmax(16rem,0.25fr)] md:items-center">
             <div>
-              <h3 className="text-xl font-bold mb-3 text-blue-100">Non-GMO Sourcing</h3>
-              <p className="text-blue-200">
-                We source non-GMO ingredients because they matter. Your animals eat what you feed them, and we care about what that means for their health and your operation.
+              <h2 className="section-title">We&apos;re grateful to serve this community.</h2>
+              <p className="section-copy">
+                We&apos;re grateful to serve the community that has supported our family from the very
+                beginning.
               </p>
             </div>
-            <div>
-              <h3 className="text-xl font-bold mb-3 text-blue-100">Small Farm Advocacy</h3>
-              <p className="text-blue-200">
-                We believe small farms are important. They feed families, they're good stewards of the land, and they deserve to thrive without getting crushed by corporate pricing and logistics.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-3 text-blue-100">Honest Business</h3>
-              <p className="text-blue-200">
-                Straightforward pricing, no hidden fees or pressure tactics. We tell you what things cost and why. That's how we want to build relationships.
-              </p>
+            <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
+              <Link href={ORDER_PATH} className="btn-primary">
+                Build My Pallet
+              </Link>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="btn-secondary">
+                Contact Remi
+              </a>
             </div>
           </div>
-        </section>
-
-        {/* Remi's Story */}
-        <section className="py-12 md:py-16">
-          <h2 className="text-3xl font-bold mb-8 text-[var(--ink)]">About Remi</h2>
-          <p className="text-lg text-[var(--ink-muted)] leading-relaxed">
-            Remi knows the challenges of small farming firsthand. He understands the frustration of searching for feed, the sting of bad pricing, and the importance of animals doing well. That's why Kesten Feed Co exists—not as just another feed supplier, but as a partner who gets it.
-          </p>
-        </section>
-
-        {/* Call to Action */}
-        <section className="py-12 md:py-16 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-[var(--ink)]">Ready to Work Together?</h2>
-          <p className="text-lg text-[var(--ink-muted)] mb-8 max-w-2xl mx-auto">
-            Let's talk about your farm and how Kesten Feed Co can help support it.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/order-feed"
-              className="px-8 py-3 bg-[var(--bronze)] text-white font-bold text-sm uppercase tracking-wide rounded hover:opacity-90 transition-opacity"
-            >
-              Place an Order
-            </a>
-            <a
-              href="/contact"
-              className="px-8 py-3 border-2 border-[var(--bronze)] text-[var(--bronze)] font-bold text-sm uppercase tracking-wide rounded hover:bg-[var(--lace)] transition-colors"
-            >
-              Get in Touch
-            </a>
-          </div>
-        </section>
+        </Section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-[var(--ink)] text-white mt-16">
-        <div className="mx-auto w-full max-w-[90rem] px-5 md:px-10 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h4 className="font-bold mb-3">Kesten Feed Co</h4>
-              <p className="text-blue-200 text-sm">High-quality non-GMO feed for Missouri farms and homesteaders.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-3">Contact</h4>
-              <p className="text-blue-200 text-sm">Phone: 660-971-0060</p>
-              <p className="text-blue-200 text-sm">Email: remi@kestenfeed.co</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-3">Location</h4>
-              <p className="text-blue-200 text-sm">16298 Norway Ave<br />Marshall, MO 65340</p>
-            </div>
-          </div>
-          <div className="border-t border-blue-700 pt-8 text-center text-blue-200 text-sm">
-            <p>&copy; 2024 Kesten Feed Co. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

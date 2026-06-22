@@ -1,26 +1,10 @@
 import type { Metadata } from "next";
-import { Besley, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-
-const besley = Besley({
-  variable: "--font-besley",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Kesten Feed Co",
-  description: "Reliable feed blends, local service, and responsive support from Kesten Feed Co.",
+  title: "Kesten Feed Co. | Reliable Feed from Folks You Can Trust",
+  description:
+    "Quality non-GMO and organic feed for homesteaders and livestock producers across west-central Missouri.",
 };
 
 export default function RootLayout({
@@ -29,10 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} ${besley.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
