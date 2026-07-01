@@ -15,18 +15,21 @@ const navItems = [
 
 export function SiteHeader({ active, tone = "light" }: SiteHeaderProps) {
   const isDark = tone === "dark";
+  const logoSrc = isDark
+    ? "/Kesten Feed Co. logo (1)/Lace no background or shadow (2).svg"
+    : "/Kesten Feed Co. logo (1)/Blue no background, no shadow.svg";
 
   return (
     <header className="py-5 md:py-7">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <Link href="/" aria-label="Kesten Feed Co home" className="inline-flex w-fit items-center">
           <Image
-            src="/main-logo.png"
+            src={logoSrc}
             alt="Kesten Feed Co"
-            width={112}
-            height={112}
+            width={168}
+            height={168}
             priority={tone === "dark"}
-            className="h-12 w-auto md:h-14"
+            className="h-[4.5rem] w-auto md:h-[5.25rem]"
           />
         </Link>
 

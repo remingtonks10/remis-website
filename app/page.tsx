@@ -60,7 +60,9 @@ export default function Home() {
         <section className="relative -mx-5 overflow-hidden bg-[var(--ink)] px-5 pb-16 md:-mx-10 md:px-10 md:pb-24">
           <div
             className="absolute inset-0 bg-cover bg-center opacity-46"
-            style={{ backgroundImage: "url('/truck moving range coops turkeys.jpg')" }}
+            style={{
+              backgroundImage: "url('/turkeys ranging on pasture.jpg')",
+            }}
             aria-hidden="true"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,72,120,0.88),rgba(15,72,120,0.58),rgba(15,72,120,0.35))]" />

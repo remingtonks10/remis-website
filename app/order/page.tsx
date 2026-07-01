@@ -62,7 +62,7 @@ export default function OrderFeed() {
         <section className="relative -mx-5 overflow-hidden px-5 py-16 md:-mx-10 md:px-10 md:py-24">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/order-pigs.png')" }}
+            style={{ backgroundImage: "url('/range coop inside broilers.jpg')" }}
             aria-hidden="true"
           />
           <div className="absolute inset-0 bg-[rgba(15,72,120,0.68)]" aria-hidden="true" />
